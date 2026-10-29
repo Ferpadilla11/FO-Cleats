@@ -1,0 +1,52 @@
+<index class="html"></index>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FO CLEATS | Eleva tu juego</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>FO CLEATS</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <h2>ELEVA TU JUEGO</h2>
+      <p>Encuentra tus próximas chuteras Nike y Adidas.</p>
+      <a class="boton" href="#catalogo">VER CATÁLOGO</a>
+    </section>
+
+    <section id="catalogo">
+      <h2>NUESTRO CATÁLOGO</h2>
+
+      <div class="filtros">
+        <button onclick="filtrar('Todas')">Todas</button>
+        <button onclick="filtrar('Nike')">Nike</button>
+        <button onclick="filtrar('Adidas')">Adidas</button>
+      </div>
+
+      <div id="productos" class="productos"></div>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <p>FO CLEATS | Tu estilo. Tu juego. Tu cancha.</p>
+    <a href="https://wa.me/59169200541">
+      WhatsApp: +591 69200541
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

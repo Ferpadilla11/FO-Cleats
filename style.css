@@ -1,0 +1,171 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080808;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 24px 7%;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  color: #B6FF00;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 18px;
+}
+
+.hero {
+  text-align: center;
+  padding: 110px 20px;
+}
+
+.hero h2 {
+  font-size: clamp(36px, 7vw, 70px);
+  margin-bottom: 12px;
+}
+
+.boton,
+.producto a {
+  display: inline-block;
+  background: #B6FF00;
+  color: black;
+  padding: 14px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#catalogo {
+  padding: 40px 7%;
+  text-align: center;
+}
+
+.filtros {
+  margin: 30px 0;
+}
+
+.filtros button {
+  background: #222;
+  color: white;
+  border: 1px solid #B6FF00;
+  padding: 12px 24px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+
+.producto {
+  background: #171717;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.producto img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.precio {
+  color: #B6FF00;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.producto select {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid #333;
+}
+
+footer a {
+  color: #B6FF00;
+}
+
+/* Mejorar la distribución del catálogo */
+
+* {
+  box-sizing: border-box;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+.producto {
+  background: #171717;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.producto img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+.producto select {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+}
+
+.producto a {
+  display: inline-block;
+  background: #B6FF00;
+  color: #000;
+  padding: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  position: static;
+  margin-top: 50px;
+  padding: 35px 20px;
+  text-align: center;
+  clear: both;
+}
