@@ -52,7 +52,36 @@
 
     <section id="catalogo" class="catalog" aria-labelledby="catalog-title">
       <div class="section-heading"><div><p class="eyebrow">SELECCIÓN FO CLEATS</p><h2 id="catalog-title">NUESTRO <span>CATÁLOGO.</span></h2></div><p>Selecciona tu modelo favorito y consulta su disponibilidad.</p></div>
-      <div class="catalog-toolbar"><div class="filtros" aria-label="Filtrar por marca"><button type="button" onclick="filtrar('Todas')" class="active" aria-pressed="true">TODAS</button><button type="button" onclick="filtrar('Nike')" aria-pressed="false">NIKE</button><button type="button" onclick="filtrar('Adidas')" aria-pressed="false">ADIDAS</button></div><span class="catalog-label">FO CLEATS / STORE</span></div>
+<div class="catalog-toolbar">
+  <div class="filtros-catalogo">
+
+    <h3>ELIGE TU TERRENO</h3>
+
+    <div class="filtros">
+      <button onclick="filtrarSuperficie('Todas')">
+        TODAS
+      </button>
+
+      <button onclick="filtrarSuperficie('FG')">
+        CAMPO FG
+      </button>
+
+      <button onclick="filtrarSuperficie('TF')">
+        SINTÉTICO TURF
+      </button>
+    </div>
+
+    <h3>ELIGE TU MARCA</h3>
+
+    <div class="filtros">
+      <button onclick="filtrar('Todas')">TODAS</button>
+      <button onclick="filtrar('Nike')">NIKE</button>
+      <button onclick="filtrar('Adidas')">ADIDAS</button>
+    </div>
+
+  </div>
+</div>
+
       <div id="productos" class="productos"></div>
     </section>
 

@@ -1,77 +1,133 @@
 const productos = [
 	{
-		nombre: "Nike - Modelo 01",
+		nombre: "Nike - Phantom GT2 FG",
 		marca: "Nike",
+        superficie: "FG",
 		precio: 850,
 		imagen: "imagenes/nike-azul.jpg"
 	},
 	{
-		nombre: "Adidas - Modelo 01",
+		nombre: "Adidas - Predator Edge FG",
 		marca: "Adidas",
+        superficie: "FG",
 		precio: 850,
 		imagen: "imagenes/adidas-01.jpg"
 	},
     
   {
-    nombre: "Nike - Modelo 02",
+    nombre: "Nike - phantom GT2 FG rosadas",
     marca: "Nike",
+    superficie: "FG",
     precio: 850,
     imagen: "imagenes/nike-02.jpg"
   },
   {
-    nombre: "Nike - Modelo 03",
+    nombre: "Nike - Mercurial Vapor 15 Elite FG",
     marca: "Nike",
+    superficie: "FG",
     precio: 850,
     imagen: "imagenes/nike-03.jpg"
   },
   {
-    nombre: "Adidas - Modelo 02",
+    nombre: "Adidas - Adidas F50 Messi FG",
     marca: "Adidas",
+    superficie: "FG",
     precio: 850,
     imagen: "imagenes/adidas-02.jpg"
   },
   {
-    nombre: "Adidas - Modelo 03",
+    nombre: "Adidas - Adidas X Speedflow.1 FG",
     marca: "Adidas",
+    superficie: "FG",
     precio: 850,
     imagen: "imagenes/adidas-03.jpg"
   },
   {
-    nombre: "Nike - Modelo 04",
+    nombre: "Nike - Superfly Elite FG",
     marca: "Nike",
+    superficie: "FG",
     precio: 850,
     imagen: "imagenes/nike-04.jpg"
   },
   {
-    nombre: "Nike - Modelo 05",
+    nombre: "Nike - Tiempo legend 9 Elite FG",
     marca: "Nike",
+    superficie: "FG",
     precio: 850,
     imagen: "imagenes/nike-05.jpg"
   },
   {
-    nombre: "Nike - Modelo 06",
+    nombre: "Nike - Tiempo Legend 10 Elite FG",
     marca: "Nike",
+    superficie: "FG",
     precio: 850,
     imagen: "imagenes/nike-06.jpg"
   },
   {
-    nombre: "Adidas - Modelo 04",
+    nombre: "Adidas - copa sense.1 fg",
     marca: "Adidas",
+    superficie: "FG",
     precio: 850,
     imagen: "imagenes/adidas-04.webp"
   },
   {
-    nombre: "Adidas - Modelo 05",
+    nombre: "Adidas - F50 crazyfast fg",
     marca: "Adidas",
+    superficie: "FG",
     precio: 850,
     imagen: "imagenes/adidas-05.webp"
   },
   {
-    nombre: "Adidas - Modelo 06",
+    nombre: "Adidas - F50 adizero fg",
     marca: "Adidas",
+    superficie: "FG",
     precio: 850,
     imagen: "imagenes/adidas-06.webp"
-  }
+  },
+  
+{
+  nombre: "Nike Turf - Modelo 01",
+  marca: "Nike",
+  superficie: "TF",
+  precio: 650,
+  imagen: "imagenes/nike-01 TF.jpg"
+},
+{
+  nombre: "Nike Turf - Modelo 02",
+  marca: "Nike",
+  superficie: "TF",
+  precio: 650,
+  imagen: "imagenes/nike-02 TF.webp"
+},
+{
+  nombre: "Nike Turf - Modelo 03",
+  marca: "Nike",
+  superficie: "TF",
+  precio: 650,
+  imagen: "imagenes/nike-03 TF.jpg"
+},
+{
+  nombre: "Adidas Turf - Modelo 01",
+  marca: "Adidas",
+  superficie: "TF",
+  precio: 650,
+  imagen: "imagenes/adidas-01 TF.jpg"
+},
+{
+  nombre: "Adidas Turf - Modelo 02",
+  marca: "Adidas",
+  superficie: "TF",
+  precio: 650,
+  imagen: "imagenes/adidas-02 TF.jpg"
+},
+{
+  nombre: "Adidas Turf - Modelo 03",
+  marca: "Adidas",
+  superficie: "TF",
+  precio: 650,
+  imagen: "imagenes/adidas-03 TF.webp"
+}
+
 
 
 ];
@@ -138,17 +194,35 @@ function mostrarProductos(lista) {
 	});
 }
 
-function filtrar(marca) {
-    document.querySelectorAll(".filtros button").forEach(boton => {
-        const seleccionado = boton.textContent.trim().toLowerCase() === marca.toLowerCase();
-        boton.classList.toggle("active", seleccionado);
-        boton.setAttribute("aria-pressed", String(seleccionado));
-    });
-	const lista = marca === "Todas"
-		? productos
-		: productos.filter(p => p.marca === marca);
 
-	mostrarProductos(lista);
+let marcaSeleccionada = "Todas";
+let superficieSeleccionada = "Todas";
+
+function actualizarCatalogo() {
+  const lista = productos.filter(producto => {
+    const coincideMarca =
+      marcaSeleccionada === "Todas" ||
+      producto.marca === marcaSeleccionada;
+
+    const coincideSuperficie =
+      superficieSeleccionada === "Todas" ||
+      producto.superficie === superficieSeleccionada;
+
+    return coincideMarca && coincideSuperficie;
+  });
+
+  mostrarProductos(lista);
 }
+
+function filtrar(marca) {
+  marcaSeleccionada = marca;
+  actualizarCatalogo();
+}
+
+function filtrarSuperficie(superficie) {
+  superficieSeleccionada = superficie;
+  actualizarCatalogo();
+}
+
 
 mostrarProductos(productos);
