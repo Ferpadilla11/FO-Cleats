@@ -35,7 +35,44 @@ const productos = [
     marca: "Adidas",
     precio: 850,
     imagen: "imagenes/adidas-03.jpg"
+  },
+  {
+    nombre: "Nike - Modelo 04",
+    marca: "Nike",
+    precio: 850,
+    imagen: "imagenes/nike-04.jpg"
+  },
+  {
+    nombre: "Nike - Modelo 05",
+    marca: "Nike",
+    precio: 850,
+    imagen: "imagenes/nike-05.jpg"
+  },
+  {
+    nombre: "Nike - Modelo 06",
+    marca: "Nike",
+    precio: 850,
+    imagen: "imagenes/nike-06.jpg"
+  },
+  {
+    nombre: "Adidas - Modelo 04",
+    marca: "Adidas",
+    precio: 850,
+    imagen: "imagenes/adidas-04.webp"
+  },
+  {
+    nombre: "Adidas - Modelo 05",
+    marca: "Adidas",
+    precio: 850,
+    imagen: "imagenes/adidas-05.webp"
+  },
+  {
+    nombre: "Adidas - Modelo 06",
+    marca: "Adidas",
+    precio: 850,
+    imagen: "imagenes/adidas-06.webp"
   }
+
 
 ];
 
@@ -102,6 +139,11 @@ function mostrarProductos(lista) {
 }
 
 function filtrar(marca) {
+    document.querySelectorAll(".filtros button").forEach(boton => {
+        const seleccionado = boton.textContent.trim().toLowerCase() === marca.toLowerCase();
+        boton.classList.toggle("active", seleccionado);
+        boton.setAttribute("aria-pressed", String(seleccionado));
+    });
 	const lista = marca === "Todas"
 		? productos
 		: productos.filter(p => p.marca === marca);

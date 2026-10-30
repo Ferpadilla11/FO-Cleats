@@ -1,52 +1,65 @@
-<index class="html"></index>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FO CLEATS | Eleva tu juego</title>
+  <meta name="theme-color" content="#080b09">
+  <meta name="description" content="FO CLEATS: descubre chuteras Nike y Adidas. Elige tu modelo y talla y consulta por WhatsApp.">
+  <title>FO CLEATS | Equípate para ganar</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header>
-    <h1>FO CLEATS</h1>
-    <nav>
+  <div class="announcement">FO CLEATS <span>✦</span> TU JUEGO EMPIEZA AQUÍ <span>✦</span> NIKE & ADIDAS</div>
+  <header class="site-header">
+    <a href="#inicio" class="brand" aria-label="FO CLEATS, ir al inicio"><span class="brand-icon">F<span>●</span></span><span>FO <strong>CLEATS</strong></span></a>
+    <nav aria-label="Navegación principal">
       <a href="#inicio">Inicio</a>
       <a href="#catalogo">Catálogo</a>
       <a href="#contacto">Contacto</a>
     </nav>
+    <a class="header-contact" href="https://wa.me/59169200541" target="_blank" rel="noopener noreferrer">HABLEMOS <span aria-hidden="true">↗</span></a>
   </header>
 
   <main>
-    <section id="inicio" class="hero">
-      <h2>ELEVA TU JUEGO</h2>
-      <p>Encuentra tus próximas chuteras Nike y Adidas.</p>
-      <a class="boton" href="#catalogo">VER CATÁLOGO</a>
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse"></span> COLECCIÓN FO CLEATS · 2026</p>
+        <h1 id="hero-title">EQUÍPATE<br>PARA <em>GANAR.</em></h1>
+        <p class="hero-description">Las chuteras que acompañan cada jugada. Descubre modelos Nike y Adidas, elige tu talla y consulta directamente por WhatsApp.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#catalogo">EXPLORAR CATÁLOGO <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-outline" href="https://wa.me/59169200541" target="_blank" rel="noopener noreferrer">CONSULTAR POR WHATSAPP</a>
+        </div>
+        <div class="hero-facts"><span><strong>NIKE</strong><small>COLECCIÓN</small></span><span><strong>ADIDAS</strong><small>COLECCIÓN</small></span><span><strong>Bs 850</strong><small>PRECIO POR MODELO</small></span></div>
+      </div>
+      <div class="hero-visual" aria-label="Modelos destacados de FO CLEATS">
+        <div class="hero-visual-frame"><span class="visual-top">FO CLEATS / PERFORMANCE</span><img src="imagenes/nike-azul.jpg" alt="Chutera Nike destacada de FO CLEATS"><span class="visual-bottom">01 / NIKE COLLECTION</span></div>
+        <div class="hero-small-card"><img src="imagenes/adidas-01.jpg" alt="Chutera Adidas destacada"><span>ADIDAS<br><strong>COLECCIÓN</strong></span></div>
+        <span class="hero-stamp">PLAY<br>HARDER<span>↗</span></span>
+      </div>
     </section>
 
-    <section id="catalogo">
-      <h2>NUESTRO CATÁLOGO</h2>
+    <section class="value-strip" aria-label="Ventajas de FO CLEATS"><span>⚡ ESTILO PARA CADA JUGADA</span><span>◈ MODELOS NIKE Y ADIDAS</span><span>↗ PEDIDOS DIRECTOS POR WHATSAPP</span></section>
 
-      <div class="filtros">
-        <button onclick="filtrar('Todas')">Todas</button>
-        <button onclick="filtrar('Nike')">Nike</button>
-        <button onclick="filtrar('Adidas')">Adidas</button>
+    <section class="collections" aria-labelledby="collections-title">
+      <div class="section-heading"><div><p class="eyebrow">ELIGE TU MARCA</p><h2 id="collections-title">DOS MARCAS.<br><span>UNA PASIÓN.</span></h2></div><p>Encuentra las chuteras que van con tu forma de jugar.</p></div>
+      <div class="collection-grid">
+        <a href="#catalogo" class="collection-card collection-nike" onclick="filtrar('Nike')"><div><span>01 / COLECCIÓN</span><h3>NIKE</h3><span class="collection-link">EXPLORAR MODELOS ↗</span></div><img src="imagenes/nike-azul.jpg" alt="Explorar chuteras Nike"></a>
+        <a href="#catalogo" class="collection-card collection-adidas" onclick="filtrar('Adidas')"><div><span>02 / COLECCIÓN</span><h3>ADIDAS</h3><span class="collection-link">EXPLORAR MODELOS ↗</span></div><img src="imagenes/adidas-01.jpg" alt="Explorar chuteras Adidas"></a>
       </div>
+    </section>
 
+    <section id="catalogo" class="catalog" aria-labelledby="catalog-title">
+      <div class="section-heading"><div><p class="eyebrow">SELECCIÓN FO CLEATS</p><h2 id="catalog-title">NUESTRO <span>CATÁLOGO.</span></h2></div><p>Selecciona tu modelo favorito y consulta su disponibilidad.</p></div>
+      <div class="catalog-toolbar"><div class="filtros" aria-label="Filtrar por marca"><button type="button" onclick="filtrar('Todas')" class="active" aria-pressed="true">TODAS</button><button type="button" onclick="filtrar('Nike')" aria-pressed="false">NIKE</button><button type="button" onclick="filtrar('Adidas')" aria-pressed="false">ADIDAS</button></div><span class="catalog-label">FO CLEATS / STORE</span></div>
       <div id="productos" class="productos"></div>
     </section>
+
+    <section class="cta-section"><div><p class="eyebrow">¿LISTO PARA TU PRÓXIMO PARTIDO?</p><h2>TU PRÓXIMA JUGADA<br><span>EMPIEZA AQUÍ.</span></h2><p>Escríbenos y consulta por el modelo y la talla que necesitas.</p></div><a class="btn btn-primary" href="https://wa.me/59169200541" target="_blank" rel="noopener noreferrer">HABLAR POR WHATSAPP ↗</a></section>
   </main>
 
-  <footer id="contacto">
-    <p>FO CLEATS | Tu estilo. Tu juego. Tu cancha.</p>
-    <a href="https://wa.me/59169200541">
-      WhatsApp: +591 69200541
-    </a>
-  </footer>
-
+  <footer id="contacto"><div><a class="footer-brand" href="#inicio">FO <span>CLEATS</span></a><p>TU ESTILO. TU JUEGO. TU CANCHA.</p></div><div><span>CONTACTO DIRECTO</span><a href="https://wa.me/59169200541" target="_blank" rel="noopener noreferrer">+591 69200541 ↗</a></div><small>© 2026 FO CLEATS</small></footer>
   <script src="script.js"></script>
 </body>
 </html>
-
